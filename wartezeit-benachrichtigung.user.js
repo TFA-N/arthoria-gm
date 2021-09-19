@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name        Arthoria Benachrichtungs-Skript
 // @namespace   https://github.com/TFA-N/arthoria-gm
-// @downloadURL https://github.com/TFA-N/gm-revorix/raw/master/wartezeit-benachrichtigung.user.js
-// @updateURL   https://github.com/TFA-N/gm-revorix/raw/master/wartezeit-benachrichtigung.user.js
+// @downloadURL https://github.com/TFA-N/arthoria-gm/raw/main/wartezeit-benachrichtigung.user.js
+// @updateURL   https://github.com/TFA-N/arthoria-gm/raw/main/wartezeit-benachrichtigung.user.js
 // @match       https://arthoria.de/*
 // @grant       GM_notification
 // @grant       window.focus
