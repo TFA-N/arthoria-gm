@@ -17,8 +17,8 @@ var golditems =
         "Wüstenkristall": 68,
         "Hufeisen": 38,
         "heilendes Wasser": 28,
-        "Goldnugget": 102,
-        "Silbernugget": 48
+//        "Goldnugget": 102,
+//        "Silbernugget": 48
       }
 
 //-------------------------------------------------------------
@@ -59,12 +59,30 @@ function calculateInventoryValue()
   return value;
 }
 
+function itemValuesToText()
+{
+  var value = 0;
+  var elements;
+  var outString = "";
+  for (var key in golditems)
+  {
+      elements = findItemsInTable(key);
+      if(elements.length > 0)
+      {
+        value = parseInt(elements[0].childNodes[1].data.replace(/\D/g,''))*golditems[key];
+        outString+= "<br>" + key + ": " + value
+      }
+      
+  }
+  return outString;
+}
+
 function displayInventoryValue(value)
 {
   if(value > 0)
   {
-    var text = document.getElementsByTagName("h1")[0].textContent + " " + value + " Gold in Golditems!";
-    document.getElementsByTagName("h1")[0].textContent = text;
+    var text = document.getElementsByTagName("h1")[0].textContent + " " + value + " Gold in Golditems:";
+    document.getElementsByTagName("h1")[0].innerHTML = text + itemValuesToText();
   }
 }
 
